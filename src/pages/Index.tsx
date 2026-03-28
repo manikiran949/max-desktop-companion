@@ -8,17 +8,13 @@ import LoreSection from "@/components/LoreSection";
 import FAQSection from "@/components/FAQSection";
 import TeamSection from "@/components/TeamSection";
 import FooterSection from "@/components/FooterSection";
+import CosmicBackground from "@/components/CosmicBackground";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-[#03030a]">
-      {/* Background Effects */}
-      <div className="space-wrap">
-        <div className="nebula-glow" />
-        <div className="stars-layer-1" />
-        <div className="stars-layer-2" />
-        <div className="stars-layer-3" />
-      </div>
+      {/* Dynamic Canvas Background */}
+      <CosmicBackground />
 
       {/* Content */}
       <div className="relative z-10">
