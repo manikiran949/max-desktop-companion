@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
-import { Download, Github, Shield, Wifi, HardDrive, Zap } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { Download, Github, Shield } from "lucide-react";
 import maxHero from "@/assets/max-hero.png";
+import GitHubStars from "@/components/GitHubStars";
 
 const stats = [
   { value: "56MB", label: "Lightweight" },
@@ -10,21 +12,37 @@ const stats = [
 ];
 
 const HeroSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Parallax transforms — different speeds create depth
+  const glowY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const maxY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 40]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pb-[15vh]">
-      {/* Layered radial glows */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pb-[15vh]">
+      {/* Layered radial glows — parallax */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: glowY, opacity: glowOpacity }}
+      >
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/8 blur-[150px]" />
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
-      </div>
+      </motion.div>
 
       <div className="container relative z-10 flex flex-col items-center gap-16 py-12">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 w-full">
-          {/* MAX character */}
+          {/* MAX character — parallax (moves slower = deeper) */}
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, type: "spring" }}
+            style={{ y: maxY }}
             src={maxHero}
             alt="MAX Desktop Companion — a pixel-art robot companion"
             width={350}
@@ -32,8 +50,8 @@ const HeroSection = () => {
             className="animate-float drop-shadow-[0_0_60px_hsl(187_100%_42%/0.5)] shrink-0"
           />
 
-          {/* Right side content */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 max-w-xl md:pt-16">
+          {/* Right side content — parallax (moves faster = closer) */}
+          <motion.div style={{ y: contentY }} className="flex flex-col items-center md:items-start text-center md:text-left gap-6 max-w-xl md:pt-16">
             {/* Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -88,6 +106,16 @@ const HeroSection = () => {
               </a>
             </motion.div>
 
+            {/* GitHub Stars Badge */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex justify-center md:justify-start"
+            >
+              <GitHubStars />
+            </motion.div>
+
             {/* SmartScreen note */}
             <motion.p
               initial={{ opacity: 0 }}
@@ -98,7 +126,7 @@ const HeroSection = () => {
               <Shield className="w-3.5 h-3.5" />
               Windows SmartScreen warning? Click "More info" → "Run anyway". 100% offline & safe.
             </motion.p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Stats bar */}

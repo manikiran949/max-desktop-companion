@@ -9,12 +9,16 @@ import FAQSection from "@/components/FAQSection";
 import TeamSection from "@/components/TeamSection";
 import FooterSection from "@/components/FooterSection";
 import CosmicBackground from "@/components/CosmicBackground";
+import CursorTrail from "@/components/CursorTrail";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-[#03030a]">
       {/* Dynamic Canvas Background */}
       <CosmicBackground />
+
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
 
       {/* Content */}
       <div className="relative z-10">

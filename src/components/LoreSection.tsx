@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { BookOpen } from "lucide-react";
 
 const timeline = [
@@ -10,12 +11,26 @@ const timeline = [
 ];
 
 const LoreSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const glowY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const glowScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.1, 0.9]);
+
   return (
-    <section id="lore" className="relative py-28 px-4">
-      {/* Background accent */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/3 blur-[150px]" />
-      </div>
+    <section id="lore" ref={sectionRef} className="relative py-28 px-4">
+      {/* Background accent — parallax */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: glowY }}
+      >
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/3 blur-[150px]"
+          style={{ scale: glowScale }}
+        />
+      </motion.div>
 
       <div className="container max-w-4xl relative z-10">
         <motion.div

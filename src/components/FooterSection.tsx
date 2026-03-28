@@ -1,10 +1,28 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Github, Twitter, MessageSquare, Heart, ExternalLink } from "lucide-react";
 
 const FooterSection = () => {
+  const footerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ["start end", "end end"],
+  });
+  const glowY = useTransform(scrollYProgress, [0, 1], ["40%", "-10%"]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.6, 1]);
+
   return (
-    <footer className="relative border-t border-border">
+    <footer ref={footerRef} className="relative border-t border-border overflow-hidden">
+      {/* Parallax glow */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        style={{ y: glowY, opacity: glowOpacity }}
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[150px]" />
+      </motion.div>
+
       {/* CTA band */}
-      <div className="py-20 px-4">
+      <div className="relative py-20 px-4">
         <div className="container max-w-3xl text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground">
             Don't let his planet <span className="text-primary text-glow-cyan">die.</span>

@@ -96,6 +96,21 @@
   height: 100%;
 }
 
+/* Cursor Trail — Between background and content */
+.cursor-trail-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth scroll offset for fixed navbar */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 /* ─── Text Protection Utilities ─── */
 /* Ensure text stays readable over the dynamic background */
 @layer utilities {
