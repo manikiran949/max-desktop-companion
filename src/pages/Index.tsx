@@ -11,18 +11,28 @@ import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen">
-      <div className="starfield" />
-      <Navbar />
-      <HeroSection />
-      <HowItWorksSection />
-      <ShowcaseSection />
-      <FeaturesSection />
-      <SecretCodesSection />
-      <LoreSection />
-      <FAQSection />
-      <TeamSection />
-      <FooterSection />
+    <div className="relative min-h-screen bg-[#03030a]">
+      {/* Background Effects */}
+      <div className="space-wrap">
+        <div className="nebula-glow" />
+        <div className="stars-layer-1" />
+        <div className="stars-layer-2" />
+        <div className="stars-layer-3" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <Navbar />
+        <HeroSection />
+        <HowItWorksSection />
+        <ShowcaseSection />
+        <FeaturesSection />
+        <SecretCodesSection />
+        <LoreSection />
+        <FAQSection />
+        <TeamSection />
+        <FooterSection />
+      </div>
     </div>
   );
 };

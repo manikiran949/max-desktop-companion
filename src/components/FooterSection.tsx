@@ -65,11 +65,10 @@ const FooterSection = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-border py-8 px-4">
-        <div className="container max-w-4xl flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground/50">
+        <div className="container max-w-4xl flex items-center justify-center text-xs text-muted-foreground/50 text-center">
           <p>
-            Made in India · No data collected · 100% offline · Free forever
+            No data collected · 100% offline · Free forever
           </p>
-          <p>© 2026 Srikar Vardhan Mangadoddi · NIT Silchar</p>
         </div>
 
         <blockquote className="container max-w-4xl text-center mt-6 text-muted-foreground/30 italic text-xs">
