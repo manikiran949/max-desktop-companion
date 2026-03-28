@@ -1,59 +1,80 @@
-import { Github, Twitter, MessageSquare } from "lucide-react";
+import { Github, Twitter, MessageSquare, Heart, ExternalLink } from "lucide-react";
 
 const FooterSection = () => {
   return (
-    <footer className="relative border-t border-glow py-16 px-4">
-      <div className="container max-w-4xl text-center space-y-8">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-          Don't let his planet die.
-        </h2>
+    <footer className="relative border-t border-border">
+      {/* CTA band */}
+      <div className="py-20 px-4">
+        <div className="container max-w-3xl text-center space-y-6">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground">
+            Don't let his planet <span className="text-primary text-glow-cyan">die.</span>
+          </h2>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Star the repo. Report a bug. Share with a friend. Every action sends energy back through the quantum tether.
+          </p>
 
-        <div className="flex flex-wrap gap-4 justify-center">
-          <a
-            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-heading font-semibold hover:brightness-110 transition-all"
-          >
-            <Github className="w-5 h-5" />
-            Star on GitHub
-          </a>
-          <a
-            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/issues/new?template=bug_report.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-glow bg-secondary text-secondary-foreground font-heading font-semibold hover:bg-secondary/80 transition-all"
-          >
-            Report a Bug
-          </a>
-          <a
-            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/issues/new?template=feature_request.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-glow bg-secondary text-secondary-foreground font-heading font-semibold hover:bg-secondary/80 transition-all"
-          >
-            Request a Feature
-          </a>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-heading font-semibold hover:brightness-110 transition-all box-glow-cyan"
+            >
+              <Heart className="w-4 h-4" />
+              Star on GitHub
+            </a>
+            <a
+              href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/issues/new?template=bug_report.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card text-foreground font-heading font-semibold hover:border-primary/30 transition-all"
+            >
+              Report a Bug
+            </a>
+            <a
+              href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/issues/new?template=feature_request.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card text-foreground font-heading font-semibold hover:border-primary/30 transition-all"
+            >
+              Request a Feature
+            </a>
+          </div>
+
+          {/* Share buttons */}
+          <div className="flex gap-4 justify-center pt-2">
+            {[
+              { icon: Twitter, label: "Twitter", href: "https://twitter.com/intent/tweet?text=A%20tiny%20guardian%20from%20a%20dying%20planet%20crashed%20onto%20my%20desktop.%20Now%20he%20lives%20here.%20%F0%9F%9A%80&url=https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion" },
+              { icon: MessageSquare, label: "Reddit", href: "https://reddit.com/submit?url=https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion" },
+              { icon: ExternalLink, label: "LinkedIn", href: "https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion" },
+            ].map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all"
+                aria-label={`Share on ${s.label}`}
+              >
+                <s.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="border-t border-border py-8 px-4">
+        <div className="container max-w-4xl flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground/50">
+          <p>
+            Made in India · No data collected · 100% offline · Free forever
+          </p>
+          <p>© 2026 Srikar Vardhan Mangadoddi · NIT Silchar</p>
         </div>
 
-        <div className="flex gap-6 justify-center">
-          <a href="https://twitter.com/intent/tweet?text=A%20tiny%20guardian%20from%20a%20dying%20planet%20crashed%20onto%20my%20desktop.%20Now%20he%20lives%20here.%20%F0%9F%9A%80&url=https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <Twitter className="w-5 h-5" />
-          </a>
-          <a href="https://reddit.com/submit?url=https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <MessageSquare className="w-5 h-5" />
-          </a>
-        </div>
-
-        <blockquote className="text-muted-foreground/50 italic text-sm">
+        <blockquote className="container max-w-4xl text-center mt-6 text-muted-foreground/30 italic text-xs">
           "It is important to do kind things in secret, so strangers can still believe the universe is gentle."
         </blockquote>
-
-        <p className="text-muted-foreground/40 text-xs">
-          Made in India · No data collected · 100% offline · Free forever
-          <br />
-          © 2026 Srikar Vardhan Mangadoddi · NIT Silchar
-        </p>
       </div>
     </footer>
   );
