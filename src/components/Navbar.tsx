@@ -48,9 +48,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases/download/v1.0.0/MAX_Setup_v1.0.0.exe"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-heading font-semibold hover:brightness-110 transition-all"
           >
             <Download className="w-4 h-4" />
@@ -85,9 +83,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases/download/v1.0.0/MAX_Setup_v1.0.0.exe"
             className="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-heading font-semibold"
           >
             <Download className="w-4 h-4" />
