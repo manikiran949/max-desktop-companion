@@ -1,35 +1,80 @@
 import { motion } from "framer-motion";
-import {
-  Monitor, Camera, Cpu, Gamepad2, Palette, Wifi,
-  HardDrive, Zap, Timer, Crosshair, LayoutGrid, Shield
-} from "lucide-react";
+import { Gamepad2, Camera, Cpu, Palette, ChevronRight } from "lucide-react";
 
 const categories = [
   {
     title: "He Moves",
+    subtitle: "Physics-based fun on your desktop",
     icon: Gamepad2,
-    items: ["Push windows", "Ride your cursor", "Swing from edges", "Tunnel through windows", "Climb walls", "Bellyflop", "Rope walk", "Surf windows"],
+    color: "primary",
+    quote: "Not all battles are fought for victory.",
+    items: [
+      { name: "Push", desc: "Shove windows off screen" },
+      { name: "Ride", desc: "Jump on your cursor" },
+      { name: "Swing", desc: "Pendulum from window edges" },
+      { name: "Tunnel", desc: "Dig through windows" },
+      { name: "Climb", desc: "Scale window edges" },
+      { name: "Bellyflop", desc: "Launch & splat" },
+      { name: "Rope Walk", desc: "Tightrope between windows" },
+      { name: "Surf", desc: "Ride moving windows" },
+    ],
   },
   {
     title: "He's Useful",
+    subtitle: "Tools Windows should've had built in",
     icon: Camera,
-    items: ["Screenshots", "GIF recording", "Color picker", "WiFi passwords", "IP info", "Disk usage", "Battery health", "Live system stats"],
+    color: "accent",
+    quote: "Wheat is wheat, even when people think it is grass.",
+    items: [
+      { name: "Screenshot", desc: "One-click capture" },
+      { name: "GIF Record", desc: "Screen to GIF" },
+      { name: "Color Picker", desc: "Any pixel, any app" },
+      { name: "WiFi Password", desc: "Saved passwords instantly" },
+      { name: "IP Info", desc: "Local + public IP" },
+      { name: "Disk Info", desc: "All drives at a glance" },
+      { name: "Battery Health", desc: "Status & power plan" },
+      { name: "System Stats", desc: "Live CPU, RAM, disk" },
+    ],
   },
   {
     title: "System Power",
+    subtitle: "Take control of your machine",
     icon: Cpu,
-    items: ["Kill frozen apps", "Uninstall apps", "Clean temp files", "Window arrange", "Pin windows", "Focus mode", "Startup manager", "Bloat finder"],
+    color: "primary",
+    quote: "The Gita wasn't spoken at a table.",
+    items: [
+      { name: "Kill Process", desc: "End frozen apps" },
+      { name: "Uninstall", desc: "Remove from registry" },
+      { name: "Temp Clean", desc: "Wipe temp files" },
+      { name: "Window Arrange", desc: "Grid tile windows" },
+      { name: "Pin Window", desc: "Always on top" },
+      { name: "Focus Mode", desc: "Kill distractions" },
+      { name: "Startup Manager", desc: "Control boot apps" },
+      { name: "Bloat Finder", desc: "Find memory hogs" },
+    ],
   },
   {
     title: "Personality",
+    subtitle: "He's alive — not a tool",
     icon: Palette,
-    items: ["13 expressions", "Clipboard reactions", "Idle animations", "Cursor dodge", "App-aware moods", "Seasonal outfits", "Wisdom quotes", "Hidden terminal"],
+    color: "accent",
+    quote: "I wanted something with a soul.",
+    items: [
+      { name: "13 Expressions", desc: "Happy, scared, love, dizzy…" },
+      { name: "Clipboard React", desc: "Code? He wears glasses" },
+      { name: "Idle Animations", desc: "Nap, wave, stretch, fish" },
+      { name: "Cursor Dodge", desc: "Pounce & evade" },
+      { name: "App-Aware", desc: "Different per app" },
+      { name: "Seasonal", desc: "Holiday outfits" },
+      { name: "Wisdom Quotes", desc: "3 AM philosopher" },
+      { name: "Hidden Terminal", desc: "Type to discover" },
+    ],
   },
 ];
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.15 } },
+  show: { transition: { staggerChildren: 0.1 } },
 };
 
 const item = {
@@ -39,19 +84,20 @@ const item = {
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="relative py-32 px-4">
+    <section id="features" className="relative py-28 px-4">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary text-glow-cyan mb-4">
-            45+ Features. One Right-Click.
+          <span className="text-primary text-sm font-heading font-semibold tracking-widest uppercase">Capabilities</span>
+          <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mt-3 mb-4">
+            45+ Features. <span className="text-primary text-glow-cyan">One Right-Click.</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            A tiny guardian with the power of a full toolkit.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            A tiny guardian with the power of a full toolkit. Everything accessible from a single right-click menu — no menus to memorize, no apps to install.
           </p>
         </motion.div>
 
@@ -60,26 +106,52 @@ const FeaturesSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-6"
+          className="space-y-6"
         >
-          {categories.map((cat) => (
+          {categories.map((cat, idx) => (
             <motion.div
               key={cat.title}
               variants={item}
-              className="rounded-xl border border-glow bg-card p-8 box-glow-cyan hover:border-primary/50 transition-colors"
+              className={`rounded-2xl border bg-card overflow-hidden ${
+                cat.color === "accent" ? "border-accent/20" : "border-primary/20"
+              }`}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2.5 rounded-lg bg-primary/10">
-                  <cat.icon className="w-6 h-6 text-primary" />
+              {/* Header */}
+              <div className="p-8 pb-0">
+                <div className="flex items-start gap-4 mb-2">
+                  <div className={`p-3 rounded-xl ${
+                    cat.color === "accent" ? "bg-accent/10" : "bg-primary/10"
+                  }`}>
+                    <cat.icon className={`w-7 h-7 ${
+                      cat.color === "accent" ? "text-accent" : "text-primary"
+                    }`} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">{cat.title}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{cat.subtitle}</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-heading font-semibold text-foreground">{cat.title}</h3>
+                <p className={`text-xs italic mt-3 ${
+                  cat.color === "accent" ? "text-accent/60" : "text-primary/60"
+                }`}>"{cat.quote}"</p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {cat.items.map((feat) => (
-                  <span key={feat} className="px-3 py-1.5 text-sm rounded-md bg-muted text-muted-foreground">
-                    {feat}
-                  </span>
-                ))}
+
+              {/* Features grid */}
+              <div className="p-8 pt-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {cat.items.map((feat) => (
+                    <div
+                      key={feat.name}
+                      className="group rounded-xl bg-muted/50 border border-border/50 p-4 hover:border-primary/30 hover:bg-muted transition-all"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <ChevronRight className="w-3.5 h-3.5 text-primary/50 group-hover:text-primary transition-colors" />
+                        <span className="font-heading font-semibold text-sm text-foreground">{feat.name}</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground pl-5.5">{feat.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
