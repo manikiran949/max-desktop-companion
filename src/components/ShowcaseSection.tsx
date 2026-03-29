@@ -89,7 +89,7 @@ const ShowcaseSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className={`group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all ${
+                    className={`group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-colors duration-300 will-change-transform ${
                       section.items.length === 1 ? "" :
                       section.items.length === 4 && i === 3 ? "md:col-span-2 lg:col-span-1" : ""
                     }`}
@@ -99,7 +99,7 @@ const ShowcaseSection = () => {
                       <img
                         src={item.gif}
                         alt={`MAX ${item.title} demo`}
-                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 will-change-transform"
                         loading="lazy"
                       />
                       {/* Overlay gradient */}

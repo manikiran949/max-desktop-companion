@@ -94,6 +94,9 @@
   pointer-events: none;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: strict;
 }
 
 /* Cursor Trail — Between background and content */
@@ -104,6 +107,9 @@
   pointer-events: none;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: strict;
 }
 
 /* Smooth scroll offset for fixed navbar */
