@@ -55,7 +55,8 @@ const SecretCodesSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center justify-between px-5 py-3.5 hover:bg-muted/50 transition-colors"
+                  whileHover={{ x: 6 }}
+                  className="flex items-center justify-between px-5 py-3.5 hover:bg-muted/50 transition-colors cursor-default"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-lg">{c.emoji}</span>

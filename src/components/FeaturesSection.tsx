@@ -119,13 +119,16 @@ const FeaturesSection = () => {
               {/* Header */}
               <div className="p-8 pb-0">
                 <div className="flex items-start gap-4 mb-2">
-                  <div className={`p-3 rounded-xl ${
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className={`p-3 rounded-xl icon-glow-hover cursor-default ${
                     cat.color === "accent" ? "bg-accent/10" : "bg-primary/10"
                   }`}>
                     <cat.icon className={`w-7 h-7 ${
                       cat.color === "accent" ? "text-accent" : "text-primary"
                     }`} />
-                  </div>
+                  </motion.div>
                   <div>
                     <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">{cat.title}</h3>
                     <p className="text-muted-foreground text-sm mt-1">{cat.subtitle}</p>

@@ -60,9 +60,13 @@ const HowItWorksSection = () => {
                 transition={{ delay: i * 0.15 }}
                 className="relative flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 relative z-10">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 relative z-10 icon-glow-hover cursor-default"
+                >
                   <s.icon className="w-7 h-7 text-primary" />
-                </div>
+                </motion.div>
                 <span className="text-xs font-heading font-bold text-primary/60 tracking-widest mb-2">
                   STEP {s.step}
                 </span>

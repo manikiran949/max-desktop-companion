@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Download, Github, Shield } from "lucide-react";
 import maxHero from "@/assets/max-hero.png";
 import GitHubStars from "@/components/GitHubStars";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const stats = [
   { value: "56MB", label: "Lightweight" },
@@ -147,7 +148,7 @@ const HeroSection = () => {
               transition={{ delay: 0.9 + i * 0.1 }}
               className="rounded-xl border border-border bg-card/50 backdrop-blur-sm p-4 text-center"
             >
-              <div className="text-3xl font-heading font-bold text-primary">{s.value}</div>
+              <AnimatedCounter value={s.value} className="text-3xl font-heading font-bold text-primary" />
               <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
             </motion.div>
           ))}

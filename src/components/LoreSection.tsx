@@ -68,7 +68,7 @@ const LoreSection = () => {
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background z-10 mt-2" />
+                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background z-10 mt-2 animate-pulse-glow shadow-[0_0_8px_hsl(187_100%_42%/0.5)]" />
 
                   {/* Content */}
                   <div className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12"}`}>

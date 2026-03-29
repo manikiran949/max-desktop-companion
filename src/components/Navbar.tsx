@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Download, Menu, X } from "lucide-react";
 
@@ -13,9 +13,27 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Detect which section is currently in view
+      const sections = links.map((l) => l.href.replace("#", ""));
+      let current = "";
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom > 150) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -38,15 +56,30 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-2">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="px-3 py-1.5 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const sectionId = l.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`relative px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/10"
+                }`}
+              >
+                {l.label}
+                {isActive && (
+                  <motion.div
+                    layoutId="active-nav"
+                    className="absolute -bottom-0.5 left-1 right-1 h-0.5 bg-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
           <a
             href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases/download/v1.0.0/MAX_Setup_v1.0.0.exe"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-heading font-semibold hover:brightness-110 transition-all"
@@ -72,16 +105,24 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-4 pb-4"
         >
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setMobileOpen(false)}
-              className="block px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const sectionId = l.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileOpen(false)}
+                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                  isActive
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/10"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
           <a
             href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases/download/v1.0.0/MAX_Setup_v1.0.0.exe"
             className="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-heading font-semibold"

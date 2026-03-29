@@ -10,12 +10,16 @@ import TeamSection from "@/components/TeamSection";
 import FooterSection from "@/components/FooterSection";
 import CosmicBackground from "@/components/CosmicBackground";
 import CursorTrail from "@/components/CursorTrail";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-[#03030a]">
       {/* Dynamic Canvas Background */}
       <CosmicBackground />
+
+      {/* Scroll Progress Bar */}
+      <ScrollProgress />
 
       {/* Cursor Trail Effect */}
       <CursorTrail />

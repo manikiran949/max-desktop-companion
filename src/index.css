@@ -112,6 +112,29 @@
   contain: strict;
 }
 
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: hsl(187 100% 42%);
+  transform-origin: 0%;
+  z-index: 100;
+  box-shadow: 0 0 10px hsl(187 100% 42% / 0.6), 0 0 30px hsl(187 100% 42% / 0.3);
+}
+
+/* Pulsing glow on hover for icon containers */
+@keyframes icon-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0px hsl(187 100% 42% / 0); }
+  50% { box-shadow: 0 0 20px hsl(187 100% 42% / 0.3), 0 0 40px hsl(187 100% 42% / 0.1); }
+}
+
+.icon-glow-hover:hover {
+  animation: icon-glow-pulse 1.5s ease-in-out infinite;
+}
+
 /* Smooth scroll offset for fixed navbar */
 [id] {
   scroll-margin-top: 5rem;
