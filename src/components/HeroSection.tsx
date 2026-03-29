@@ -25,7 +25,7 @@ const HeroSection = () => {
   const glowOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pb-[15vh]">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pb-[8vh]">
       {/* Layered radial glows — parallax */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -35,8 +35,8 @@ const HeroSection = () => {
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[120px]" />
       </motion.div>
 
-      <div className="container relative z-10 flex flex-col items-center gap-16 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 w-full">
+      <div className="container relative z-10 flex flex-col items-center gap-10 py-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-full">
           {/* MAX character — parallax (moves slower = deeper) */}
           <motion.img
             initial={{ opacity: 0, scale: 0.8 }}
@@ -45,13 +45,13 @@ const HeroSection = () => {
             style={{ y: maxY }}
             src={maxHero}
             alt="MAX Desktop Companion — a pixel-art robot companion"
-            width={350}
-            height={350}
+            width={300}
+            height={300}
             className="animate-float drop-shadow-[0_0_60px_hsl(187_100%_42%/0.5)] shrink-0"
           />
 
           {/* Right side content — parallax (moves faster = closer) */}
-          <motion.div style={{ y: contentY }} className="flex flex-col items-center md:items-start text-center md:text-left gap-6 max-w-xl md:pt-16">
+          <motion.div style={{ y: contentY }} className="flex flex-col items-center md:items-start text-center md:text-left gap-5 max-w-xl">
             {/* Title */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -90,18 +90,18 @@ const HeroSection = () => {
             >
               <a
                 href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion/releases/download/v1.0.0/MAX_Setup_v1.0.0.exe"
-                className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-heading font-bold text-lg hover:brightness-110 transition-all box-glow-cyan hover:scale-[1.02]"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-heading font-bold text-base hover:brightness-110 transition-all box-glow-cyan hover:scale-[1.02]"
               >
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                <Download className="w-4 h-4 group-hover:animate-bounce" />
                 Download for Windows
               </a>
               <a
                 href="https://github.com/M-SRIKAR-VARDHAN/MAX-Desktop-Companion"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl border border-border bg-card text-foreground font-heading font-semibold text-lg hover:border-primary/40 hover:bg-card/80 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card text-foreground font-heading font-semibold text-base hover:border-primary/40 hover:bg-card/80 transition-all"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4" />
                 View Source
               </a>
             </motion.div>
