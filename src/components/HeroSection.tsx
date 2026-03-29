@@ -117,15 +117,18 @@ const HeroSection = () => {
             </motion.div>
 
             {/* SmartScreen note */}
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="text-xs text-muted-foreground/50 flex items-center gap-1.5 justify-center md:justify-start"
+              className="flex items-center gap-3 px-4 py-3 rounded-xl border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm max-w-md"
             >
-              <Shield className="w-3.5 h-3.5" />
-              Windows SmartScreen warning? Click "More info" → "Run anyway". 100% offline & safe.
-            </motion.p>
+              <Shield className="w-5 h-5 text-amber-400 shrink-0" />
+              <p className="text-xs text-amber-200/90 leading-relaxed">
+                <span className="font-semibold text-amber-300">Windows SmartScreen warning?</span>{" "}
+                Click "More info" → "Run anyway". 100% offline & safe.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
 

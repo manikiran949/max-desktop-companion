@@ -131,8 +131,10 @@ const FeaturesSection = () => {
                     <p className="text-muted-foreground text-sm mt-1">{cat.subtitle}</p>
                   </div>
                 </div>
-                <p className={`text-xs italic mt-3 ${
-                  cat.color === "accent" ? "text-accent/60" : "text-primary/60"
+                <p className={`text-sm italic mt-4 border-l-[3px] pl-4 py-1.5 rounded-r-md font-heading ${
+                  cat.color === "accent"
+                    ? "text-accent/90 border-accent/50 bg-accent/5"
+                    : "text-primary/90 border-primary/50 bg-primary/5"
                 }`}>"{cat.quote}"</p>
               </div>
 

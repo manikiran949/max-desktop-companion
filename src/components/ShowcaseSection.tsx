@@ -71,7 +71,7 @@ const ShowcaseSection = () => {
                 <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-2">
                   {section.category}
                 </h3>
-                <blockquote className="text-muted-foreground/60 italic text-sm border-l-2 border-primary/30 pl-4">
+                <blockquote className="text-primary/80 italic text-base border-l-[3px] border-primary/60 pl-5 py-2 bg-primary/5 rounded-r-lg font-heading">
                   "{section.quote}"
                 </blockquote>
               </motion.div>

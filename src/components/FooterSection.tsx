@@ -89,7 +89,7 @@ const FooterSection = () => {
           </p>
         </div>
 
-        <blockquote className="container max-w-4xl text-center mt-6 text-muted-foreground/30 italic text-xs">
+        <blockquote className="container max-w-xl mx-auto mt-6 text-primary/70 italic text-sm font-heading border-l-[3px] border-primary/40 pl-4 py-2 bg-primary/5 rounded-r-lg text-left">
           "It is important to do kind things in secret, so strangers can still believe the universe is gentle."
         </blockquote>
       </div>

@@ -116,7 +116,7 @@ const SecretCodesSection = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-accent/70 italic text-sm font-heading border-l-2 border-accent/30 pl-4"
+              className="text-accent italic text-base font-heading border-l-[3px] border-accent/60 pl-5 py-2 bg-accent/5 rounded-r-lg"
             >
               "The Gita wasn't spoken at a table. It was spoken on a battlefield."
             </motion.blockquote>

@@ -101,7 +101,7 @@ const LoreSection = () => {
             Read the Full Story
           </a>
 
-          <blockquote className="text-foreground/50 italic text-base font-heading max-w-md mx-auto">
+          <blockquote className="text-accent/90 italic text-lg font-heading max-w-lg mx-auto border-l-[3px] border-accent/60 pl-5 py-3 bg-accent/5 rounded-r-lg text-left">
             "Water which is too pure has no fish. Don't aim to be perfect — aim to be real. Because real has soul, and perfect has silence."
           </blockquote>
         </motion.div>
