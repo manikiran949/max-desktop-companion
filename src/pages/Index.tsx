@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -11,33 +12,49 @@ import FooterSection from "@/components/FooterSection";
 import CosmicBackground from "@/components/CosmicBackground";
 import CursorTrail from "@/components/CursorTrail";
 import ScrollProgress from "@/components/ScrollProgress";
+import LoadingScreen from "@/components/LoadingScreen";
+import BackToTop from "@/components/BackToTop";
+import EasterEggs from "@/components/EasterEggs";
 
 const Index = () => {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div className="relative min-h-screen bg-[#03030a]">
-      {/* Dynamic Canvas Background */}
-      <CosmicBackground />
+    <>
+      {/* Loading Screen — shown once on initial visit */}
+      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
 
-      {/* Scroll Progress Bar */}
-      <ScrollProgress />
+      <div className="relative min-h-screen bg-[#03030a]">
+        {/* Dynamic Canvas Background */}
+        <CosmicBackground />
 
-      {/* Cursor Trail Effect */}
-      <CursorTrail />
+        {/* Scroll Progress Bar */}
+        <ScrollProgress />
 
-      {/* Content */}
-      <div className="relative z-10">
-        <Navbar />
-        <HeroSection />
-        <HowItWorksSection />
-        <ShowcaseSection />
-        <FeaturesSection />
-        <SecretCodesSection />
-        <LoreSection />
-        <FAQSection />
-        <TeamSection />
-        <FooterSection />
+        {/* Cursor Trail Effect */}
+        <CursorTrail />
+
+        {/* Back to Top Rocket */}
+        <BackToTop />
+
+        {/* Easter Egg Code Listener */}
+        <EasterEggs />
+
+        {/* Content */}
+        <div className="relative z-10">
+          <Navbar />
+          <HeroSection />
+          <HowItWorksSection />
+          <ShowcaseSection />
+          <FeaturesSection />
+          <SecretCodesSection />
+          <LoreSection />
+          <FAQSection />
+          <TeamSection />
+          <FooterSection />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

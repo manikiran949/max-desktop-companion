@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Download, Github, Shield } from "lucide-react";
 import maxHero from "@/assets/max-hero.png";
 import GitHubStars from "@/components/GitHubStars";
+import GitHubDownloads from "@/components/GitHubDownloads";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
 const stats = [
@@ -107,14 +108,15 @@ const HeroSection = () => {
               </a>
             </motion.div>
 
-            {/* GitHub Stars Badge */}
+            {/* GitHub Badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex justify-center md:justify-start"
+              className="flex flex-wrap gap-2 justify-center md:justify-start"
             >
               <GitHubStars />
+              <GitHubDownloads />
             </motion.div>
 
             {/* SmartScreen note */}
