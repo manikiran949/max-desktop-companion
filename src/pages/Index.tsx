@@ -21,7 +21,7 @@ const Index = () => {
 
   return (
     <>
-      {/* Loading Screen — shown once on initial visit */}
+      {/* Loading Screen - shown once on initial visit */}
       {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
 
       <div className="relative min-h-screen bg-[#03030a]">

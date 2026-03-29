@@ -55,7 +55,7 @@ const categories = [
   },
   {
     title: "Personality",
-    subtitle: "He's alive — not a tool",
+    subtitle: "He's alive - not a tool",
     icon: Palette,
     color: "accent",
     quote: "I wanted something with a soul.",
@@ -97,7 +97,7 @@ const FeaturesSection = () => {
             45+ Features. <span className="text-primary text-glow-cyan">One Right-Click.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A tiny guardian with the power of a full toolkit. Everything accessible from a single right-click menu — no menus to memorize, no apps to install.
+            A tiny guardian with the power of a full toolkit. Everything accessible from a single right-click menu - no menus to memorize, no apps to install.
           </p>
         </motion.div>
 

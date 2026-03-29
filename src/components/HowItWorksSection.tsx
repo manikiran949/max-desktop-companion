@@ -24,7 +24,7 @@ const steps = [
     icon: Rocket,
     step: "04",
     title: "Discover Secrets",
-    desc: "Type hidden codes anywhere — no text box needed. Trigger rave mode, zero gravity, ghost clones, and a hidden terminal.",
+    desc: "Type hidden codes anywhere - no text box needed. Trigger rave mode, zero gravity, ghost clones, and a hidden terminal.",
   },
 ];
 

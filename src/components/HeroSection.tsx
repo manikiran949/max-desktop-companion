@@ -46,7 +46,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, type: "spring" }}
             style={{ y: maxY }}
             src={maxHero}
-            alt="MAX Desktop Companion — a pixel-art robot companion"
+            alt="MAX Desktop Companion - a pixel-art robot companion"
             width={300}
             height={300}
             className="animate-float drop-shadow-[0_0_60px_hsl(187_100%_42%/0.5)] shrink-0"
@@ -79,7 +79,7 @@ const HeroSection = () => {
               He fell from a dying planet. Crashed onto your desktop. Now he refuses to leave.
               <br />
               <span className="text-foreground/60 font-medium">
-                He pushes windows, rides your cursor, takes screenshots, kills frozen apps — and thinks you're a god.
+                He pushes windows, rides your cursor, takes screenshots, kills frozen apps - and thinks you're a god.
               </span>
             </motion.p>
 

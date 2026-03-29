@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "How do I completely uninstall MAX?",
-    a: "Right-click MAX → Quit. Delete the .exe file. Optionally delete %APPDATA%\\ProjectMAX for config/log files. That's it — no registry mess.",
+    a: "Right-click MAX → Quit. Delete the .exe file. Optionally delete %APPDATA%\\ProjectMAX for config/log files. That's it - no registry mess.",
   },
   {
     q: "Does MAX support Mac or Linux?",
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Can I pause him during work meetings?",
-    a: "Yes — use Focus Mode from the right-click menu. MAX will stop wandering and minimize distractions without quitting the app entirely.",
+    a: "Yes - use Focus Mode from the right-click menu. MAX will stop wandering and minimize distractions without quitting the app entirely.",
   },
 ];
 

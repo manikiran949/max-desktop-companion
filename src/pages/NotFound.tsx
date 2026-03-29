@@ -37,7 +37,7 @@ const NotFound = () => {
           ))}
         </motion.div>
 
-        {/* MAX character — confused */}
+        {/* MAX character - confused */}
         <motion.img
           initial={{ opacity: 0, y: 20, rotate: -5 }}
           animate={{ opacity: 1, y: 0, rotate: 0 }}
@@ -70,7 +70,7 @@ const NotFound = () => {
             MAX searched everywhere.
           </p>
           <p className="text-muted-foreground text-base leading-relaxed">
-            This page doesn't exist — maybe it fell into a wormhole.
+            This page doesn't exist - maybe it fell into a wormhole.
             <br />
             <span className="text-muted-foreground/50 text-sm">
               Attempted route: <code className="text-primary/40 font-mono bg-primary/5 px-1.5 py-0.5 rounded">{location.pathname}</code>

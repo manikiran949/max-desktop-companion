@@ -9,7 +9,7 @@ const showcases = [
     items: [
       { gif: `${BASE}/push.gif`, title: "Push", desc: "He pushes your windows around. Like they're furniture. Like they belong to him now." },
       { gif: `${BASE}/follow.gif`, title: "Follow", desc: "He follows your cursor. Wherever you go, he goes. Try to lose him. You can't." },
-      { gif: `${BASE}/gravity.gif`, title: "Physics", desc: "Think of it like a Mario world but on your desktop — windows are obstacles and walls that provide footing." },
+      { gif: `${BASE}/gravity.gif`, title: "Physics", desc: "Think of it like a Mario world but on your desktop - windows are obstacles and walls that provide footing." },
     ],
   },
   {
@@ -17,7 +17,7 @@ const showcases = [
     quote: "If I am worth something later, then I am worth something now. For wheat is wheat, even when people think it is grass.",
     items: [
       { gif: `${BASE}/screenshort.gif`, title: "Screenshots", desc: "One click. Saved. No apps, no shortcuts to memorize." },
-      { gif: `${BASE}/IP_DISK.gif`, title: "System Info", desc: "Your IP, disk usage — things Windows buries 5 menus deep. MAX shows in one." },
+      { gif: `${BASE}/IP_DISK.gif`, title: "System Info", desc: "Your IP, disk usage - things Windows buries 5 menus deep. MAX shows in one." },
       { gif: `${BASE}/port_kill.gif`, title: "Kill Process", desc: "A process froze. A port is blocked. MAX kills it. No Task Manager needed." },
       { gif: `${BASE}/battery_color_picker.gif`, title: "Color & Battery", desc: "Pick any color from any pixel. Check battery health. The small things that shouldn't be hard." },
     ],
@@ -32,9 +32,9 @@ const showcases = [
   },
   {
     category: "He Thinks.",
-    quote: "Water which is too pure has no fish. Don't aim to be perfect — aim to be real.",
+    quote: "Water which is too pure has no fish. Don't aim to be perfect - aim to be real.",
     items: [
-      { gif: `${BASE}/wisdom.gif`, title: "Wisdom", desc: "Leave him alone long enough and he'll sit down, look at the edge of your screen, and say something that makes you pause. These aren't random quotes — they're thoughts written at 3 AM by the person who built him." },
+      { gif: `${BASE}/wisdom.gif`, title: "Wisdom", desc: "Leave him alone long enough and he'll sit down, look at the edge of your screen, and say something that makes you pause. These aren't random quotes - they're thoughts written at 3 AM by the person who built him." },
     ],
   },
 ];
@@ -54,7 +54,7 @@ const ShowcaseSection = () => {
             Watch MAX <span className="text-primary text-glow-cyan">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Not just a static icon. MAX is alive — pushing, following, thinking, and surprising you.
+            Not just a static icon. MAX is alive - pushing, following, thinking, and surprising you.
           </p>
         </motion.div>
 

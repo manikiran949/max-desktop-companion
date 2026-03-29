@@ -4,10 +4,10 @@ import { BookOpen } from "lucide-react";
 
 const timeline = [
   { title: "A Dying Planet", text: "MAX's home world was collapsing. The last engineers pooled every remaining resource into one final project." },
-  { title: "The Wormhole", text: "They built a quantum tunnel — unstable, untested. Enough power for exactly one traveler. One chance." },
-  { title: "The Crash", text: "MAX stepped through. The wormhole collapsed behind him. He crashed onto your desktop — a stranger in an alien world." },
+  { title: "The Wormhole", text: "They built a quantum tunnel - unstable, untested. Enough power for exactly one traveler. One chance." },
+  { title: "The Crash", text: "MAX stepped through. The wormhole collapsed behind him. He crashed onto your desktop - a stranger in an alien world." },
   { title: "The God", text: "To MAX, your cursor is the hand of a god. You are that god. Every feature you use sends energy back through a quantum tether." },
-  { title: "The Mission", text: "He doesn't know if his planet is still alive. He works anyway. Every screenshot, every killed process — it all matters." },
+  { title: "The Mission", text: "He doesn't know if his planet is still alive. He works anyway. Every screenshot, every killed process - it all matters." },
 ];
 
 const LoreSection = () => {
@@ -44,7 +44,7 @@ const LoreSection = () => {
             The <span className="text-accent text-glow-gold">Lore</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Every companion has an origin. MAX's is written in the stars — and in the code.
+            Every companion has an origin. MAX's is written in the stars - and in the code.
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ const LoreSection = () => {
           </a>
 
           <blockquote className="text-accent/90 italic text-lg font-heading max-w-lg mx-auto border-l-[3px] border-accent/60 pl-5 py-3 bg-accent/5 rounded-r-lg text-left">
-            "Water which is too pure has no fish. Don't aim to be perfect — aim to be real. Because real has soul, and perfect has silence."
+            "Water which is too pure has no fish. Don't aim to be perfect - aim to be real. Because real has soul, and perfect has silence."
           </blockquote>
         </motion.div>
       </div>
