@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { Github, Twitter, MessageSquare, Heart, ExternalLink } from "lucide-react";
 
 const FooterSection = () => {
@@ -83,10 +84,14 @@ const FooterSection = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-border py-8 px-4">
-        <div className="container max-w-4xl flex items-center justify-center text-xs text-muted-foreground/50 text-center">
+        <div className="container max-w-4xl flex items-center justify-center text-xs text-muted-foreground/50 text-center gap-2">
           <p>
             No data collected · 100% offline · Free forever
           </p>
+          <span className="text-muted-foreground/20">·</span>
+          <Link to="/privacy" className="hover:text-primary transition-colors underline underline-offset-4">
+            Privacy Policy
+          </Link>
         </div>
 
         <blockquote className="container max-w-xl mx-auto mt-6 text-primary/70 italic text-sm font-heading border-l-[3px] border-primary/40 pl-4 py-2 bg-primary/5 rounded-r-lg text-left">
